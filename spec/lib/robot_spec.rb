@@ -18,23 +18,61 @@ describe Robot do
     end
   end
 
+  shared_examples_for "rotates robot" do |dir, from, to|
+    subject { robot.send(dir) }
+
+    it "in the #{dir} direction" do
+      expect { subject }.to change { robot.direction }.from(from).to(to)
+    end
+  end
+
   describe "#left" do
-    before { robot.direction = 1 }
+    let(:direction) { 1 }
+    before { robot.direction = direction }
 
-    subject { robot.left }
+    it_behaves_like "rotates robot", 'left', 1, 4
 
-    it "will rotate robot in the left direction" do
-      expect { subject }.to change { robot.direction }.from(1).to(4)
+    context "facing east" do
+      let(:direction) { 2 }
+
+      it_behaves_like "rotates robot", 'left', 2, 1
+    end
+
+    context "facing south" do
+      let(:direction) { 3 }
+
+      it_behaves_like "rotates robot", 'left', 3, 2
+    end
+
+    context "facing west" do
+      let(:direction) { 4 }
+
+      it_behaves_like "rotates robot", 'left', 4, 3
     end
   end
 
   describe "#right" do
-    before { robot.direction = 1 }
+    let(:direction) { 1 }
+    before { robot.direction = direction }
 
-    subject { robot.right }
+    it_behaves_like "rotates robot", 'right', 1, 2
 
-    it "will rotate robot in the right direction" do
-      expect { subject }.to change { robot.direction }.from(1).to(2)
+    context "facing east" do
+      let(:direction) { 2 }
+
+      it_behaves_like "rotates robot", 'right', 2, 3
+    end
+
+    context "facing south" do
+      let(:direction) { 3 }
+
+      it_behaves_like "rotates robot", 'right', 3, 4
+    end
+
+    context "facing west" do
+      let(:direction) { 4 }
+
+      it_behaves_like "rotates robot", 'right', 4, 1
     end
   end
 
