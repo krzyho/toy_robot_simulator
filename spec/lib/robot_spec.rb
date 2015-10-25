@@ -18,6 +18,43 @@ describe Robot do
     end
   end
 
+  describe "#move" do
+    let(:direction) { 1 }
+
+    before do
+      robot.x = 2
+      robot.y = 2
+      robot.direction = direction
+    end
+
+    shared_examples_for "moves robot" do |dir, x_pos, y_pos|
+      before { robot.move }
+
+      it "in the #{dir} direction" do
+        expect(robot.x).to eq(x_pos)
+        expect(robot.y).to eq(y_pos)
+        expect(robot.direction).to eq(direction)
+      end
+    end
+
+    it_behaves_like "moves robot", 'north', 2, 3
+
+    context "facing east" do
+      let(:direction) { 2 }
+      it_behaves_like "moves robot", 'east', 3, 2
+    end
+
+    context "facing south" do
+      let(:direction) { 3 }
+      it_behaves_like "moves robot", 'south', 2, 1
+    end
+
+    context "facing west" do
+      let(:direction) { 4 }
+      it_behaves_like "moves robot", 'west', 1, 2
+    end
+  end
+
   shared_examples_for "rotates robot" do |dir, from, to|
     subject { robot.send(dir) }
 

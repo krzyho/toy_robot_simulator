@@ -8,6 +8,9 @@ class Robot
   end
 
   def move
+    value = self.direction < 3 ? 1 : -1
+    axis = self.direction % 2 == 0 ? 'x' : 'y'
+    instance_variable_set(:"@#{axis}", self.send(axis) + value)
   end
 
   def left
