@@ -19,5 +19,19 @@ class Robot
   end
 
   def report
+    "[#{x},#{y}] #{direction_to_s}"
+  end
+
+  def direction_to_s
+    case self.direction
+    when 1
+      'NORTH'
+    when 2
+      'EAST'
+    when 3
+      'SOUTH'
+    when 4
+      'WEST'
+    end
   end
 end
