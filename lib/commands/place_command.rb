@@ -5,7 +5,7 @@ class PlaceCommand
     @direction = direction
   end
 
-  def valid?(_, _)
-    (0..Board::UNITS).include?(@x.to_i) && (0..Board::UNITS).include?(@y.to_i)
+  def valid?(_, board)
+    (0..board.x_size).include?(@x.to_i) && (0..board.y_size).include?(@y.to_i)
   end
 end

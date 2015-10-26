@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PlaceCommand do
   let(:command) { PlaceCommand.new('1', '2', 'NORTH') }
   let(:robot) { double }
-  let(:board) { double }
+  let(:board) { double(x_size: 5, y_size: 5) }
 
   describe '#valid?' do
     subject { command.valid?(robot, board) }
@@ -12,8 +12,16 @@ describe PlaceCommand do
       expect(subject).to be_truthy
     end
 
-    context "when PLACE parameters are out of range" do
+    context 'when PLACE x parameter is out of range' do
       let(:command) { PlaceCommand.new('10', '2', 'NORTH') }
+
+      it 'returns false' do
+        expect(subject).to be_falsy
+      end
+    end
+
+    context 'when PLACE y parameter is out of range' do
+      let(:command) { PlaceCommand.new('1', '20', 'NORTH') }
 
       it 'returns false' do
         expect(subject).to be_falsy
