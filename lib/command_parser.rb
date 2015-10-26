@@ -11,7 +11,9 @@ class CommandParser
       when 'REPORT'
         return ReportCommand.new
       end
-      return PlaceCommand.new if command_string =~ /PLACE \d+,\d+,NORTH|EAST|SOUTH|WEST/
+      if matched_string = command_string.match(/PLACE (\d+),(\d+),(NORTH|EAST|SOUTH|WEST)/)
+        return PlaceCommand.new(*matched_string[1..3])
+      end
       return IgnoreCommand.new
     end
   end
