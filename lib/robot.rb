@@ -1,5 +1,5 @@
 class Robot
-  DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
+  DIRECTIONS = %w(NORTH EAST SOUTH WEST)
   attr_accessor :x, :y, :direction
 
   def place(x, y, direction)
