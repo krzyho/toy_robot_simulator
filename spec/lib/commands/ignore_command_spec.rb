@@ -12,4 +12,12 @@ describe IgnoreCommand do
       expect(subject).to be_truthy
     end
   end
+
+  describe '#execute' do
+    subject { command.execute(robot) }
+
+    it 'does not raise error' do
+      expect { subject }.not_to raise_error
+    end
+  end
 end

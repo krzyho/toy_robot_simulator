@@ -28,4 +28,13 @@ describe PlaceCommand do
       end
     end
   end
+
+  describe '#execute' do
+    subject { command.execute(robot) }
+
+    it 'robot places' do
+      expect(robot).to receive(:place).with(1, 2, 'NORTH')
+      subject
+    end
+  end
 end

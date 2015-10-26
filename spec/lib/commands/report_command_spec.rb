@@ -12,4 +12,13 @@ describe ReportCommand do
       expect(subject).to be_truthy
     end
   end
+
+  describe '#execute' do
+    subject { command.execute(robot) }
+
+    it 'robot reports' do
+      expect(robot).to receive(:report)
+      subject
+    end
+  end
 end

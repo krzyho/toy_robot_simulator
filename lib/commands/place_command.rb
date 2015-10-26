@@ -8,4 +8,8 @@ class PlaceCommand
   def valid?(_, board)
     (0..board.x_size).include?(@x.to_i) && (0..board.y_size).include?(@y.to_i)
   end
+
+  def execute(robot)
+    robot.place(@x, @y, @direction)
+  end
 end

@@ -26,4 +26,13 @@ describe MoveCommand do
       end
     end
   end
+
+  describe '#execute' do
+    subject { command.execute(robot) }
+
+    it 'robot moves' do
+      expect(robot).to receive(:move)
+      subject
+    end
+  end
 end

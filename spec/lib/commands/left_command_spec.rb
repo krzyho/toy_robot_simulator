@@ -12,4 +12,13 @@ describe LeftCommand do
       expect(subject).to be_truthy
     end
   end
+
+  describe '#execute' do
+    subject { command.execute(robot) }
+
+    it 'robot turns left' do
+      expect(robot).to receive(:left)
+      subject
+    end
+  end
 end
