@@ -6,7 +6,7 @@ describe Robot do
   describe "#place" do
     let(:x_pos) { 1 }
     let(:y_pos) { 2 }
-    let(:direction) { 1 }
+    let(:direction) { 'NORTH' }
 
     before { subject }
     subject { robot.place(x_pos, y_pos, direction) }
@@ -14,7 +14,7 @@ describe Robot do
     it "sets correct attributes" do
       expect(robot.x).to eq(x_pos)
       expect(robot.y).to eq(y_pos)
-      expect(robot.direction).to eq(direction)
+      expect(robot.direction).to eq(1)
     end
   end
 

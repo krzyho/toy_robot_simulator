@@ -1,10 +1,11 @@
 class Robot
+  DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
   attr_accessor :x, :y, :direction
 
   def place(x, y, direction)
     self.x = x
     self.y = y
-    self.direction = direction
+    self.direction = DIRECTIONS.index(direction) + 1
   end
 
   def move
@@ -26,15 +27,6 @@ class Robot
   end
 
   def direction_to_s
-    case self.direction
-    when 1
-      'NORTH'
-    when 2
-      'EAST'
-    when 3
-      'SOUTH'
-    when 4
-      'WEST'
-    end
+    DIRECTIONS[self.direction - 1]
   end
 end
