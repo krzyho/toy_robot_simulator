@@ -14,7 +14,7 @@ def direction_string(direction)
 end
 
 describe Board do
-  let(:board) { Board.new }
+  let(:board) { Board.new(5, 5) }
 
   shared_examples_for 'move is valid' do |direction|
     let(:direction) { direction }
