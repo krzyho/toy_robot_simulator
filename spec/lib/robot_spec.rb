@@ -27,7 +27,7 @@ describe Robot do
       robot.direction = direction
     end
 
-    shared_examples_for "moves robot" do |dir, x_pos, y_pos|
+    shared_examples_for "robot moves" do |dir, x_pos, y_pos|
       before { robot.move }
 
       it "in the #{dir} direction" do
@@ -37,25 +37,25 @@ describe Robot do
       end
     end
 
-    it_behaves_like "moves robot", 'north', 2, 3
+    it_behaves_like "robot moves", 'north', 2, 3
 
-    context "facing east" do
+    context "robot facing east" do
       let(:direction) { 2 }
-      it_behaves_like "moves robot", 'east', 3, 2
+      it_behaves_like "robot moves", 'east', 3, 2
     end
 
-    context "facing south" do
+    context "robot facing south" do
       let(:direction) { 3 }
-      it_behaves_like "moves robot", 'south', 2, 1
+      it_behaves_like "robot moves", 'south', 2, 1
     end
 
-    context "facing west" do
+    context "robot facing west" do
       let(:direction) { 4 }
-      it_behaves_like "moves robot", 'west', 1, 2
+      it_behaves_like "robot moves", 'west', 1, 2
     end
   end
 
-  shared_examples_for "rotates robot" do |dir, from, to|
+  shared_examples_for "robot rotates" do |dir, from, to|
     subject { robot.send(dir) }
 
     it "in the #{dir} direction" do
@@ -67,24 +67,24 @@ describe Robot do
     let(:direction) { 1 }
     before { robot.direction = direction }
 
-    it_behaves_like "rotates robot", 'left', 1, 4
+    it_behaves_like "robot rotates", 'left', 1, 4
 
-    context "facing east" do
+    context "robot facing east" do
       let(:direction) { 2 }
 
-      it_behaves_like "rotates robot", 'left', 2, 1
+      it_behaves_like "robot rotates", 'left', 2, 1
     end
 
-    context "facing south" do
+    context "robot facing south" do
       let(:direction) { 3 }
 
-      it_behaves_like "rotates robot", 'left', 3, 2
+      it_behaves_like "robot rotates", 'left', 3, 2
     end
 
-    context "facing west" do
+    context "robot facing west" do
       let(:direction) { 4 }
 
-      it_behaves_like "rotates robot", 'left', 4, 3
+      it_behaves_like "robot rotates", 'left', 4, 3
     end
   end
 
@@ -92,24 +92,24 @@ describe Robot do
     let(:direction) { 1 }
     before { robot.direction = direction }
 
-    it_behaves_like "rotates robot", 'right', 1, 2
+    it_behaves_like "robot rotates", 'right', 1, 2
 
-    context "facing east" do
+    context "robot facing east" do
       let(:direction) { 2 }
 
-      it_behaves_like "rotates robot", 'right', 2, 3
+      it_behaves_like "robot rotates", 'right', 2, 3
     end
 
-    context "facing south" do
+    context "robot facing south" do
       let(:direction) { 3 }
 
-      it_behaves_like "rotates robot", 'right', 3, 4
+      it_behaves_like "robot rotates", 'right', 3, 4
     end
 
-    context "facing west" do
+    context "robot facing west" do
       let(:direction) { 4 }
 
-      it_behaves_like "rotates robot", 'right', 4, 1
+      it_behaves_like "robot rotates", 'right', 4, 1
     end
   end
 
@@ -136,6 +136,7 @@ describe Robot do
     before { robot.direction = direction }
 
     subject { robot.direction_to_s }
+    
     it { expect(subject).to eq('NORTH') }
 
     context "when direction is east" do
