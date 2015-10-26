@@ -22,7 +22,7 @@ class Robot
   end
 
   def report
-    "[#{x},#{y}] #{direction_to_s}"
+    puts "[#{x},#{y}] #{direction_to_s}"
   end
 
   def direction_to_s

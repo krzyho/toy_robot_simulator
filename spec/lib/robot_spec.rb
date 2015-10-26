@@ -127,7 +127,7 @@ describe Robot do
     subject { robot.report }
 
     it "returns position and facing of the robot" do
-      expect(subject).to eq("[#{x_pos},#{y_pos}] NORTH")
+      expect{ subject }.to output("[#{x_pos},#{y_pos}] NORTH\n").to_stdout
     end
   end
 
