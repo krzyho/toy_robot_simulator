@@ -13,7 +13,7 @@ describe PlaceCommand do
     end
 
     context 'when PLACE x parameter is out of range' do
-      let(:command) { PlaceCommand.new('10', '2', 'NORTH') }
+      let(:command) { PlaceCommand.new('5', '2', 'NORTH') }
 
       it 'returns false' do
         expect(subject).to be_falsy
@@ -21,7 +21,7 @@ describe PlaceCommand do
     end
 
     context 'when PLACE y parameter is out of range' do
-      let(:command) { PlaceCommand.new('1', '20', 'NORTH') }
+      let(:command) { PlaceCommand.new('1', '5', 'NORTH') }
 
       it 'returns false' do
         expect(subject).to be_falsy

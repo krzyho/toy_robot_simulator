@@ -6,7 +6,7 @@ class PlaceCommand
   end
 
   def valid?(_, board)
-    (0..board.x_size).include?(@x) && (0..board.y_size).include?(@y)
+    (0...board.x_size).include?(@x) && (0...board.y_size).include?(@y)
   end
 
   def execute(robot)
