@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Toy Robot Simulator'
   spec.description   = 'With this great gem you can play around with your robot on a 5x5 board!'
-  spec.homepage      = "github.com/krzyho/toy_robot_simulator"
+  spec.homepage      = "https://github.com/krzyho/toy_robot_simulator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

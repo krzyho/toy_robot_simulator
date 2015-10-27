@@ -31,7 +31,7 @@ from the main folder. You can now move with your robot using below commands:
 You can also pass a text file to the ```/bin/console``` script with commands in separate lines like below:
 
     $ ./bin/console < commands.txt
-where ```commands.txt``` can look as below:
+where ```commands.txt``` can be as below:
 ```ruby
 PLACE 1,1,NORTH
 MOVE
@@ -55,5 +55,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/krzyho
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The application is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
