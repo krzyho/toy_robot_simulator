@@ -10,6 +10,14 @@ describe CommandParser do
       expect(subject).to be_an(IgnoreCommand)
     end
 
+    context 'MOVE command with new line at the end' do
+      let(:command_string) { "MOVE\n" }
+
+      it 'returns MoveCommand' do
+        expect(subject).to be_an(MoveCommand)
+      end
+    end
+
     context 'mistyped MOVE command' do
       let(:command_string) { 'MVOE' }
 

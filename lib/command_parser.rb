@@ -3,7 +3,8 @@ class CommandParser
 
   class << self
     def parse_command(command_string)
-      case command_string
+      command = command_string.strip
+      case command
       when 'MOVE'
         return MoveCommand.new
       when 'LEFT'
@@ -13,7 +14,7 @@ class CommandParser
       when 'REPORT'
         return ReportCommand.new
       end
-      if matched_string = command_string.match(PLACE_COMMAND_PATTERN)
+      if matched_string = command.match(PLACE_COMMAND_PATTERN)
         return PlaceCommand.new(*matched_string[1..3])
       end
       IgnoreCommand.new
