@@ -33,4 +33,8 @@ class Robot
   def coordinates
     [self.x, self.y, self.direction]
   end
+
+  def placed?
+    x && y && direction
+  end
 end

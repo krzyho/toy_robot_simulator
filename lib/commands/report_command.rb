@@ -1,6 +1,6 @@
 class ReportCommand
-  def valid?(_, _)
-    true
+  def valid?(robot, _)
+    robot.placed?
   end
 
   def execute(robot)

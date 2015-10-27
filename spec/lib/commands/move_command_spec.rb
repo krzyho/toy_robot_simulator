@@ -7,19 +7,32 @@ describe MoveCommand do
   let(:valid_move) { true }
 
   describe '#valid?' do
+    let(:robot_placed) { true }
+
     before do
-      expect(board).to receive(:move_valid?).with(*[1, 2, 3])
+      allow(board).to receive(:move_valid?).with(*[1, 2, 3])
         .and_return(valid_move)
+      allow(robot).to receive(:placed?).and_return(robot_placed)
     end
 
     subject { command.valid?(robot, board) }
 
     it 'returns true' do
+      expect(board).to receive(:move_valid?)
       expect(subject).to be_truthy
     end
 
     context 'when board informs that move is invalid' do
       let(:valid_move) { false }
+
+      it 'returns false' do
+        expect(board).to receive(:move_valid?)
+        expect(subject).to be_falsy
+      end
+    end
+
+    context 'when robot is not placed' do
+      let(:robot_placed) { false }
 
       it 'returns false' do
         expect(subject).to be_falsy

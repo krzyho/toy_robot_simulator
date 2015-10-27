@@ -1,6 +1,6 @@
 class MoveCommand
   def valid?(robot, board)
-    board.move_valid?(*robot.coordinates)
+    robot.placed? && board.move_valid?(*robot.coordinates)
   end
 
   def execute(robot)

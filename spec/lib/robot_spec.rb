@@ -155,7 +155,7 @@ describe Robot do
     end
   end
 
-  describe "#coordinates" do
+  describe '#coordinates' do
     let(:x_pos) { 1 }
     let(:y_pos) { 2 }
     let(:direction) { 1 }
@@ -168,8 +168,50 @@ describe Robot do
 
     subject { robot.coordinates }
 
-    it "returns coordinates" do
+    it 'returns coordinates' do
       expect(subject).to eq([x_pos, y_pos, direction])
+    end
+  end
+
+  describe '#placed' do
+    let(:x_pos) { 1 }
+    let(:y_pos) { 2 }
+    let(:direction) { 1 }
+
+    before do
+      allow(robot).to receive(:x).and_return(x_pos)
+      allow(robot).to receive(:y).and_return(y_pos)
+      allow(robot).to receive(:direction).and_return(direction)
+    end
+
+    subject { robot.placed? }
+
+    it 'returns true' do
+      expect(subject).to be_truthy
+    end
+
+    context "when x is not set" do
+      let(:x_pos) { nil }
+
+      it 'returns false' do
+        expect(subject).to be_falsy
+      end
+    end
+
+    context "when y is not set" do
+      let(:y_pos) { nil }
+
+      it 'returns false' do
+        expect(subject).to be_falsy
+      end
+    end
+
+    context "when direction is not set" do
+      let(:direction) { nil }
+
+      it 'returns false' do
+        expect(subject).to be_falsy
+      end
     end
   end
 end
