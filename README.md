@@ -6,12 +6,14 @@ This application simulates a toy robot moving on a square board. There are no ob
 
 This application was developed and tested on
 > OS X Yosemite with ruby 2.2.0
+
 ## Installation
 Clone this repo and then execute:
 
     $ bundle install
 
 Application is ready to go!
+
 ## Usage
 
 Just run
@@ -29,7 +31,7 @@ from the main folder. You can now move with your robot using below commands:
 You can also pass a text file to the ```/bin/console``` script with commands in separate lines like below:
 
     $ ./bin/console < commands.txt
-Where ```commands.txt``` can look as below:
+where ```commands.txt``` can look as below:
 ```ruby
 PLACE 1,1,NORTH
 MOVE
