@@ -17,8 +17,8 @@ describe RightCommand do
     it 'returns true' do
       expect(subject).to be_truthy
     end
-    
-    context "when robot is not placed" do
+
+    context 'when robot is not placed' do
       let(:robot_placed) { false }
 
       it 'returns false' do

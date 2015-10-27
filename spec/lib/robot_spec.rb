@@ -190,7 +190,7 @@ describe Robot do
       expect(subject).to be_truthy
     end
 
-    context "when x is not set" do
+    context 'when x is not set' do
       let(:x_pos) { nil }
 
       it 'returns false' do
@@ -198,7 +198,7 @@ describe Robot do
       end
     end
 
-    context "when y is not set" do
+    context 'when y is not set' do
       let(:y_pos) { nil }
 
       it 'returns false' do
@@ -206,7 +206,7 @@ describe Robot do
       end
     end
 
-    context "when direction is not set" do
+    context 'when direction is not set' do
       let(:direction) { nil }
 
       it 'returns false' do

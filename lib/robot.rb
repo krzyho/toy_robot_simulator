@@ -9,17 +9,17 @@ class Robot
   end
 
   def move
-    value = self.direction < 3 ? 1 : -1
-    axis = self.direction % 2 == 0 ? 'x' : 'y'
-    instance_variable_set(:"@#{axis}", self.send(axis) + value)
+    value = direction < 3 ? 1 : -1
+    axis = direction.even? ? 'x' : 'y'
+    instance_variable_set(:"@#{axis}", send(axis) + value)
   end
 
   def left
-    self.direction = (self.direction > 1) ? self.direction - 1 : 4
+    self.direction = (direction > 1) ? direction - 1 : 4
   end
 
   def right
-    self.direction = (self.direction < 4) ? self.direction + 1 : 1
+    self.direction = (direction < 4) ? direction + 1 : 1
   end
 
   def report
@@ -27,11 +27,11 @@ class Robot
   end
 
   def direction_to_s
-    DIRECTIONS[self.direction - 1]
+    DIRECTIONS[direction - 1]
   end
 
   def coordinates
-    [self.x, self.y, self.direction]
+    [x, y, direction]
   end
 
   def placed?

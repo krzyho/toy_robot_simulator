@@ -7,8 +7,7 @@ class Board
   end
 
   def move_valid?(x, y, direction)
-    axis = direction % 2 == 0 ? 'x' : 'y'
+    axis = direction.even? ? 'x' : 'y'
     direction < 3 ? eval(axis) < eval("#{axis}_size") - 1 : eval(axis) > 0
   end
-
 end
