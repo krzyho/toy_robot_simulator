@@ -1,0 +1,39 @@
+PLACE 0,0,NORTH
+REPORT
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+robot does not fall down and ignores this command
+RIGHT
+REPORT
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+robot does not fall down and ignores this command
+RIGHT
+REPORT
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+robot does not fall down and ignores this command
+RIGHT
+REPORT
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+MOVE
+robot does not fall down and ignores this command
+RIGHT
+REPORT
+EXIT
