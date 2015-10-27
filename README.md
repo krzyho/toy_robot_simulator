@@ -1,38 +1,54 @@
 # ToyRobotSimulator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/toy_robot_simulator`. To experiment with that code, run `bin/console` for an interactive prompt.
+This application simulates a toy robot moving on a square board. There are no obstacles on the board, but it prevents the robot from falling off of it.
 
-TODO: Delete this and the text above, and describe your gem
+## Environment
 
+This application was developed and tested on
+> OS X Yosemite with ruby 2.2.0
 ## Installation
+Clone this repo and then execute:
 
-Add this line to your application's Gemfile:
+    $ bundle install
 
-```ruby
-gem 'toy_robot_simulator'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install toy_robot_simulator
-
+Application is ready to go!
 ## Usage
 
-TODO: Write usage instructions here
+Just run
 
-## Development
+    $ ./bin/console
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+from the main folder. You can now move with your robot using below commands:
+* PLACE X,Y,DIR
+* MOVE
+* LEFT
+* RIGHT
+* REPORT
+* EXIT
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+You can also pass a text file to the ```/bin/console``` script with commands in separate lines like below:
+
+    $ ./bin/console < commands.txt
+Where ```commands.txt``` can look as below:
+```ruby
+PLACE 1,1,NORTH
+MOVE
+RIGHT
+MOVE
+REPORT
+EXIT
+```
+
+## Testing
+To execute unit tests just run ```rake rspec``` in the main directory.
+
+You can also run integration tests from ``spec`` folder like below:
+
+    $ ./bin/console < spec/test_1.txt
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/toy_robot_simulator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/krzyho/toy_robot_simulator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
