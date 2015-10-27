@@ -6,7 +6,7 @@ MOVE
 MOVE
 MOVE
 MOVE
-robot does not fall down and ignores this command
+robot does not fall of the board and ignores this command
 RIGHT
 REPORT
 MOVE
@@ -15,7 +15,7 @@ MOVE
 MOVE
 MOVE
 MOVE
-robot does not fall down and ignores this command
+robot does not fall of the board and ignores this command
 RIGHT
 REPORT
 MOVE
@@ -24,7 +24,7 @@ MOVE
 MOVE
 MOVE
 MOVE
-robot does not fall down and ignores this command
+robot does not fall of the board and ignores this command
 RIGHT
 REPORT
 MOVE
@@ -33,7 +33,7 @@ MOVE
 MOVE
 MOVE
 MOVE
-robot does not fall down and ignores this command
+robot does not fall of the board and ignores this command
 RIGHT
 REPORT
 EXIT
