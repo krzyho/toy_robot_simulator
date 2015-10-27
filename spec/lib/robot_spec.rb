@@ -154,4 +154,22 @@ describe Robot do
       it { expect(subject).to eq('WEST') }
     end
   end
+
+  describe "#coordinates" do
+    let(:x_pos) { 1 }
+    let(:y_pos) { 2 }
+    let(:direction) { 1 }
+
+    before do
+      allow(robot).to receive(:x).and_return(x_pos)
+      allow(robot).to receive(:y).and_return(y_pos)
+      allow(robot).to receive(:direction).and_return(direction)
+    end
+
+    subject { robot.coordinates }
+
+    it "returns coordinates" do
+      expect(subject).to eq([x_pos, y_pos, direction])
+    end
+  end
 end

@@ -29,4 +29,8 @@ class Robot
   def direction_to_s
     DIRECTIONS[self.direction - 1]
   end
+
+  def coordinates
+    [self.x, self.y, self.direction]
+  end
 end
