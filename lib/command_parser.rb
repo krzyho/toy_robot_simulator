@@ -13,6 +13,8 @@ class CommandParser
         return RightCommand.new
       when 'REPORT'
         return ReportCommand.new
+      when 'EXIT'
+        return ExitCommand.new
       end
       if matched_string = command.match(PLACE_COMMAND_PATTERN)
         return PlaceCommand.new(*matched_string[1..3])

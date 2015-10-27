@@ -81,5 +81,13 @@ describe CommandParser do
         expect(subject).to be_a(ReportCommand)
       end
     end
+
+    context 'valid EXIT command' do
+      let(:command_string) { 'EXIT' }
+
+      it 'returns ExitCommand' do
+        expect(subject).to be_a(ExitCommand)
+      end
+    end
   end
 end
